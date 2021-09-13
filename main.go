@@ -22,8 +22,8 @@ func StartWithArgs(args []string) {
 	}
 	b.Start()
 
-	s := waitForSignal()
-	log.Println("signal received, broker closed.", s)
+	// s := waitForSignal()
+	// log.Println("signal received, broker closed.", s)
 }
 
 func waitForSignal() os.Signal {
