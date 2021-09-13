@@ -1,4 +1,4 @@
-package main
+package hmq
 
 import (
 	"log"
@@ -6,12 +6,12 @@ import (
 	"os/signal"
 	"runtime"
 
-	"github.com/fhmq/hmq/broker"
+	"github.com/CxZMoE/hmq/broker"
 )
 
-func main() {
+func StartWithArgs(args []string) {
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	config, err := broker.ConfigureConfig(os.Args[1:])
+	config, err := broker.ConfigureConfig(args)
 	if err != nil {
 		log.Fatal("configure broker config error: ", err)
 	}
